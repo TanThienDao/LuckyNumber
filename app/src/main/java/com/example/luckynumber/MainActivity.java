@@ -60,10 +60,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public int generateRandomNumber(){
-        Random random = new Random();
-        int upper_limit = 1000;
-        int randomNumberGenerated = random.nextInt(upper_limit);
-        return randomNumberGenerated;
-    }
 }
