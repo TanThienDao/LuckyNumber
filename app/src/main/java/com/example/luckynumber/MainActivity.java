@@ -3,12 +3,16 @@ package com.example.luckynumber;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -59,5 +63,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemID = item.getItemId();
+        if(itemID == R.id.action_home){
+            Toast.makeText(
+                    this,
+                    "You Selected Home",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }else if (itemID == R.id.action_search){
+            Toast.makeText(
+                    this,
+                    "You Selected search",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
